@@ -8,16 +8,49 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State private var inputLabel : String = ""
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            
+            Text(inputLabel)
+                .font(.largeTitle)
+            
+            Divider()
+            Spacer()
+            NumberPadView()
         }
-        .padding()
+        
     }
 }
+
+
+struct NumberPadView : View {
+    let range = 1..<4
+    @Binding var inputLabel : String
+    
+    var body : some View {
+        // 계산기 행 - 열 구조
+        HStack(spacing : 20) {
+            
+            VStack(spacing : 20) {
+                Button("7")
+                
+            }
+            
+            
+            
+            
+        }
+    }
+    
+}
+
+struct ButtonStyle : ViewModifier {
+    func body
+}
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
